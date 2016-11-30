@@ -1,0 +1,79 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 19/02/2016 14:50
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-arrow-connection:before { content: "\f100"; }
+.flaticon-checked-box:before { content: "\f101"; }
+.flaticon-circles-arrow:before { content: "\f102"; }
+.flaticon-circular-arrows:before { content: "\f103"; }
+.flaticon-cogwheel-arrow:before { content: "\f104"; }
+.flaticon-connection:before { content: "\f105"; }
+.flaticon-file:before { content: "\f106"; }
+.flaticon-geometrical-arrows:before { content: "\f107"; }
+.flaticon-idea:before { content: "\f108"; }
+.flaticon-network:before { content: "\f109"; }
+.flaticon-network-1:before { content: "\f10a"; }
+.flaticon-settings:before { content: "\f10b"; }
+.flaticon-settings-checked:before { content: "\f10c"; }
+.flaticon-squares:before { content: "\f10d"; }
+.flaticon-statistics:before { content: "\f10e"; }
+.flaticon-stopper:before { content: "\f10f"; }
+.flaticon-warning-flag:before { content: "\f110"; }
+.flaticon-work-cycle:before { content: "\f111"; }
+.flaticon-worker-checked:before { content: "\f112"; }
+.flaticon-worker-triangle-square:before { content: "\f113"; }
+    
+    $font-Flaticon-arrow-connection: "\f100";
+    $font-Flaticon-checked-box: "\f101";
+    $font-Flaticon-circles-arrow: "\f102";
+    $font-Flaticon-circular-arrows: "\f103";
+    $font-Flaticon-cogwheel-arrow: "\f104";
+    $font-Flaticon-connection: "\f105";
+    $font-Flaticon-file: "\f106";
+    $font-Flaticon-geometrical-arrows: "\f107";
+    $font-Flaticon-idea: "\f108";
+    $font-Flaticon-network: "\f109";
+    $font-Flaticon-network-1: "\f10a";
+    $font-Flaticon-settings: "\f10b";
+    $font-Flaticon-settings-checked: "\f10c";
+    $font-Flaticon-squares: "\f10d";
+    $font-Flaticon-statistics: "\f10e";
+    $font-Flaticon-stopper: "\f10f";
+    $font-Flaticon-warning-flag: "\f110";
+    $font-Flaticon-work-cycle: "\f111";
+    $font-Flaticon-worker-checked: "\f112";
+    $font-Flaticon-worker-triangle-square: "\f113";
