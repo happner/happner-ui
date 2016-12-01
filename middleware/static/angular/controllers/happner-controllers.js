@@ -21,7 +21,7 @@ happnerControllers.controller('AppController', ['$scope', 'dataService', '$rootS
 
   $rootScope.data = {
     application: {
-      name: 'Edge fund'
+      name: 'Happner UI'
     },
     cache: {},
     message: {
