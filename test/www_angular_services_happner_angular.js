@@ -41,7 +41,7 @@ if (global.TESTING) return; // When 'requiring' the module above,
 describe('happn-angular', function () {
 
   var expect = require('chai').expect;
-  var Happner = require('happner');
+  var Happner = require('happner-2');
 
   var happnerInstance;
 
@@ -58,7 +58,7 @@ describe('happn-angular', function () {
     global.TESTING = true; //.............
 
     Happner.create({
-      datalayer:{
+      happn:{
         adminPassword: PASSWORD,
         secure: true,
         port: PORT

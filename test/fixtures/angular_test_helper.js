@@ -3,7 +3,7 @@ var jsdom = require('jsdom').jsdom;
 global.document = jsdom('<html><head><script></script></head><body></body></html>');
 global.window = global.document.defaultView;
 
-global.Happner = require('Happner');
+global.Happner = require('happner-2');
 window.Happner = global.HappnClient;
 
 global.navigator = window.navigator = {};

@@ -7,8 +7,9 @@ if (!process.env.EDGE_NODE_ENV || process.env.EDGE_NODE_ENV == 'TEST') require('
 
 module.exports = {
   name: 'edgeMesh',
-  dataLayer: {
+  happn: {
     port: process.env.MASTER_PORT,
+    host: process.env.MASTER_IP,
     persist: true,
     secure: true,
     adminPassword: process.env.ADMIN_PASSWORD,

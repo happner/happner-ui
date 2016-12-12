@@ -2,7 +2,7 @@
  * Created by grant on 2016/09/12.
  */
 
-var Happner = require('happner');
+var Happner = require('happner-2');
 var Controllers = require('../controllers/controller_manager');
 
 function ServiceManager() {
@@ -13,6 +13,9 @@ function ServiceManager() {
 ServiceManager.prototype.__startHappner = function (config, callback) {
 
     var self = this;
+
+    if (config.happn.port) config.happn.port = parseInt(config.happn.port);
+
 
     Happner.create(config, function (err, mesh) {
 
@@ -70,6 +73,8 @@ ServiceManager.prototype.__stopHappner = function (config, callback) {
 ServiceManager.prototype.start = function (config, callback) {
 
     var self = this;
+
+    console.log('starting mesh:::', config);
 
     self.__startHappner(config, function (err, result) {
         if (err)
