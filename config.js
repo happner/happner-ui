@@ -17,12 +17,13 @@ module.exports = {
     middleware: {
       security: {
         exclusions: [
-          "/",
+          "/*",
           "/css/*",
           "/js/*",
           "/fonts/*",
           "/angular/*",
           "/bower_components/*",
+          "/node_modules/*",
           "/img/*",
           "/icons/*",
           "/favicon.ico"

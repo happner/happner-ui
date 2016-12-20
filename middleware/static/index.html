@@ -1,155 +1,25 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Happner Angular </title>
+  <head>
+    <title>Angular QuickStart</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
 
-    <!-- CSS Libs -->
-    <link rel="stylesheet" href="css/glyphicons.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/node_modules/zone.js/dist/zone.js"></script>
+    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
     <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/animate.css/animate.min.css">
-    <link rel="stylesheet" type="text/css"
-          href="/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/checkbox3/dist/checkbox3.min.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/datatables/media/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/datatables/media/css/dataTables.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/select2/select2.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/angular-chart.js/dist/angular-chart.css">
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
 
-    <!-- CSS App -->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/themes/flat-gray.css">
-
-</head>
-
-<body class="flat-gray" ng-cloak ng-class="{'login-page': loggedIn == false || loggedIn == null}" ng-app="happnerApp"
-      ng-controller="AppController">
-<div ng-hide="loggedIn" class="container">
-    <div ng-include src="'/angular/templates/login.html'"></div>
-</div>
-<div ng-cloak ng-show="loggedIn" class="app-container" ng-controller="SessionController">
-    <div class="row content-container">
-        <nav class="navbar navbar-default navbar-fixed-top navbar-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-expand-toggle">
-                        <i class="fa fa-bars icon"></i>
-                    </button>
-                    <ol class="breadcrumb navbar-breadcrumb">
-                        <li class="active"></li>
-                    </ol>
-                    <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
-                        <i class="fa fa-th icon"></i>
-                    </button>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
-                        <i class="fa fa-times icon"></i>
-                    </button>
-                    <li class="dropdown" ng-include src="'/angular/templates/notify-inline.html'">
-
-                    </li>
-                    <li class="dropdown" ng-include src="'/angular/templates/session.html'">
-
-                    </li>
-                    <li class="dropdown profile">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{connection.username}}<span
-                                class="caret"></span></a>
-                        <ul class="dropdown-menu animated fadeInDown">
-                            <li>
-                                <div class="profile-info">
-                                    <h4 class="username">{{connection.username}}</h4>
-                                    <div class="btn-group margin-bottom-2x" role="group">
-                                        <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i>
-                                            Logout
-                                        </button>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div ng-show="loggedIn" ng-include src="page.sidebar"></div>
-        <!-- Main Content -->
-        <div class="container-fluid">
-            <div ng-view></div>
-        </div>
-    </div>
-    <footer class="app-footer">
-        <div class="wrapper">
-            <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2016 Copyright.
-        </div>
-    </footer>
-</div>
-<!-- Javascript Libs -->
-<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/bower_components/Chart.js/Chart.js"></script>
-<script type="text/javascript" src="/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
-<script type="text/javascript" src="/bower_components/matchHeight/jquery.matchHeight-min.js"></script>
-<script type="text/javascript" src="/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/bower_components/datatables/media/js/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" src="/bower_components/select2/select2.min.js"></script>
-<script type="text/javascript" src="/bower_components/ace-builds/src-min-noconflict/ace.js"></script>
-<script type="text/javascript" src="/bower_components/ace-builds/src-min-noconflict/mode-html.js"></script>
-<script type="text/javascript" src="/bower_components/ace-builds/src-min-noconflict/mode-javascript.js"></script>
-<script type="text/javascript" src="/bower_components/ace-builds/src-min-noconflict/theme-github.js"></script>
-
-<script type="text/javascript" src="/bower_components/ace-builds/src-min-noconflict/theme-eclipse.js"></script>
-
-<script src="/bower_components/json-editor/dist/jsoneditor.js"></script>
-
-<!-- jsPlumb -->
-<script src="/bower_components/jsPlumb/dist/js/jsPlumb-2.1.4.js"></script>
-
-<!-- Happn API -->
-<script type="text/javascript" src="/api/client"></script>
-
-<!-- Angular -->
-
-<script src="/bower_components/angular/angular.js"></script>
-<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-<script src="/bower_components/angular-animate/angular-animate.min.js"></script>
-<script src="/bower_components/angular-route/angular-route.min.js"></script>
-<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-<script src="/bower_components/angular-json-editor/dist/angular-json-editor.js"></script>
-<script src="/bower_components/angular-chart.js/dist/angular-chart.js"></script>
-<script src="/bower_components/angular-select2/dist/angular-select2.min.js"></script>
-<script src="/bower_components/wiz-markdown/wizMarkdown/wizMarkdown.min.js"></script>
-<script src="/bower_components/angular-ui-ace/ui-ace.min.js"></script>
-<script src="/bower_components/angular-scroll-glue/src/scrollglue.js"></script>
-<script src="/bower_components/angu-fixed-header-table/angu-fixed-header-table.js"></script>
-<script src="/angular/directives/ui-jsplumb.js"></script>
-<script src="/angular/directives/ui-draganddrop.js"></script>
-<script src="/bower_components/moment/min/moment.min.js"></script>
-<script src="/bower_components/angular-moment/angular-moment.min.js"></script>
-<script src="/bower_components/ng-tv4/ng-tv4.js"></script>
-<script src="/bower_components/ng-pluralize-filter/ng-pluralize-filter.js"></script>
-
-
-<script src="/angular/services/happner-angular.js"></script>
-<script src="/angular/services/happner-services.js"></script>
-<script src="/angular/controllers/happner-controllers.js"></script>
-<script src="/angular/controllers/data-schema-controllers.js"></script>
-<script src="/angular/controllers/data-controllers.js"></script>
-<script src="/angular/controllers/dashboard-controllers.js"></script>
-<script src="/angular/controllers/sidebar-controllers.js"></script>
-
-<script src="/angular/app.js"></script>
-
-<!-- JQuery/Javascript -->
-
-<script type="text/javascript" src="/js/app.js"></script>
-<!-- <script type="text/javascript" src="/js/index.js"></script> -->
-</body>
-
+  <body>
+    <my-app>Loading AppComponent content here ...</my-app>
+  </body>
 </html>
