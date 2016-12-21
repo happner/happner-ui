@@ -47,3 +47,5 @@ middleware/static/bower_components
 #db files
 *.nedb
 middleware/static/middleware/static/bower_components/
+middleware/static/app/login.component.js
+middleware/static/app/login.component.js.map
