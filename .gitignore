@@ -46,3 +46,4 @@ middleware/static/bower_components
 
 #db files
 *.nedb
+middleware/static/middleware/static/bower_components/

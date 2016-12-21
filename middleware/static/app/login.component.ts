@@ -4,34 +4,38 @@ import {AuthenticationService, User} from './authentication.service'
 @Component({
     selector: 'login-form',
     providers: [AuthenticationService],
+    styleUrls: ['css/style.css'],
     template: `
-        <div class="container" >
-            <div class="title">
-                Welcome
+            <div class="login-box">
+    <div>
+        <div class="login-form row" style="background-color:white">
+            <div class="col-sm-12 text-center login-header">
+                <i class="login-logo"></i>
             </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input [(ngModel)]="user.email" id="email" 
-                            type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
+            <div class="col-sm-12">
+                <div class="login-body">
+                    <form>
+                        <div class="control">
+                            <label for="username">username</label>
+                            <input [(ngModel)]="user.email" id="email" type="email" class="validate/>
+                        </div>
+                        <div class="control">
+                            <label for="password">password</label>
+                            <input[(ngModel)]="user.password" id="password" type="password" class="validate"/>
+                        </div>
+                        <div class="login-button text-center">
+                            <input type="submit" class="btn btn-primary" value="Login" (click)="login()" >
+                        </div>
+                       <span>{{errorMsg}}</span>
+                    </form>
                 </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input [(ngModel)]="user.password" id="password" 
-                            type="password" class="validate">
-                        <label for="password">Password</label>
-                    </div>
+                <div class="login-footer">
+                    <span class="text-right"><a href="#" class="color-white">Forgot password?</a></span>
                 </div>
-
-                <span>{{errorMsg}}</span>
-                <button (click)="login()" 
-                    class="btn waves-effect waves-light" 
-                    type="submit" name="action">Login</button>
             </div>
         </div>
+    </div>
+</div>
     	`
 })
 
