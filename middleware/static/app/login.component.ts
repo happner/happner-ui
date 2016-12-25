@@ -13,18 +13,18 @@ import {AuthenticationService, User} from './authentication.service'
     <div>
         <div class="login-form row" style="background-color:white">
             <div class="col-sm-12 text-center login-header">
-                <i class="login-logo"></i>
+                <i class="login-logo"><img src="/img/happner-logo.png" style="width:200px;margin-top:30px"/></i>
             </div>
             <div class="col-sm-12">
                 <div class="login-body">
                     <form>
                         <div class="control">
                             <label for="username">username</label>
-                            <input [(ngModel)]="user.email" id="email" type="email" class="form-control" >
+                            <input [(ngModel)]="user.email" id="email" type="email" class="validate" >
                         </div>
                         <div class="control">
                             <label for="password">password</label>
-                            <input [(ngModel)]="user.password" id="password" type="password" class="form-control">
+                            <input [(ngModel)]="user.password" id="password" type="password" class="form-control validate">
                         </div>
                         <div class="login-button text-center">
                             <input type="submit" class="btn btn-primary" value="Login" (click)="login()" >

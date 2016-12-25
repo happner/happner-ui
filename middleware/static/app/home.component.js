@@ -1,4 +1,4 @@
-System.register(['angular2/core', './authentication.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './authentication.service', './topnav.component', './dashboard.component', "./sidebar.component", "angular2/src/core/metadata/view"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['angular2/core', './authentication.service'], function(exports_
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, authentication_service_1;
-    var PrivateComponent;
+    var core_1, authentication_service_1, topnav_component_1, dashboard_component_1, sidebar_component_1, view_1;
+    var HomeComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -19,30 +19,44 @@ System.register(['angular2/core', './authentication.service'], function(exports_
             },
             function (authentication_service_1_1) {
                 authentication_service_1 = authentication_service_1_1;
+            },
+            function (topnav_component_1_1) {
+                topnav_component_1 = topnav_component_1_1;
+            },
+            function (dashboard_component_1_1) {
+                dashboard_component_1 = dashboard_component_1_1;
+            },
+            function (sidebar_component_1_1) {
+                sidebar_component_1 = sidebar_component_1_1;
+            },
+            function (view_1_1) {
+                view_1 = view_1_1;
             }],
         execute: function() {
-            PrivateComponent = (function () {
-                function PrivateComponent(_service) {
+            HomeComponent = (function () {
+                function HomeComponent(_service) {
                     this._service = _service;
                 }
-                PrivateComponent.prototype.ngOnInit = function () {
+                HomeComponent.prototype.ngOnInit = function () {
                     this._service.checkCredentials();
                 };
-                PrivateComponent.prototype.logout = function () {
+                HomeComponent.prototype.logout = function () {
                     this._service.logout();
                 };
-                PrivateComponent = __decorate([
+                HomeComponent = __decorate([
                     core_1.Component({
                         selector: 'login-form',
                         providers: [authentication_service_1.AuthenticationService],
-                        template: "\n            <div class=\"container\" >\n                <div class=\"content\">\n                    <span>Congratulations, you have successfully logged in!!</span>\n                    <br />\n                    <a (click)=\"logout()\" href=\"#\">Click Here to logout</a>\n                </div>\n            </div>\n    \t"
+                        templateUrl: 'app/home.component.html',
+                        directives: [topnav_component_1.TopNavComponent, dashboard_component_1.DashBoardComponent, sidebar_component_1.SideBarComponent],
+                        encapsulation: view_1.ViewEncapsulation.None,
                     }), 
                     __metadata('design:paramtypes', [authentication_service_1.AuthenticationService])
-                ], PrivateComponent);
-                return PrivateComponent;
+                ], HomeComponent);
+                return HomeComponent;
             }());
-            exports_1("PrivateComponent", PrivateComponent);
+            exports_1("HomeComponent", HomeComponent);
         }
     }
 });
-//# sourceMappingURL=private.component.js.map
+//# sourceMappingURL=home.component.js.map

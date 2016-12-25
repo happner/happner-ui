@@ -1,4 +1,4 @@
-System.register(['angular2/core', './login.component', './private.component', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', './login.component', './home.component', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './login.component', './private.component', 'a
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, login_component_1, private_component_1, router_1;
+    var core_1, login_component_1, home_component_1, router_1;
     var AppComponent;
     return {
         setters:[
@@ -20,8 +20,8 @@ System.register(['angular2/core', './login.component', './private.component', 'a
             function (login_component_1_1) {
                 login_component_1 = login_component_1_1;
             },
-            function (private_component_1_1) {
-                private_component_1 = private_component_1_1;
+            function (home_component_1_1) {
+                home_component_1 = home_component_1_1;
             },
             function (router_1_1) {
                 router_1 = router_1_1;
@@ -37,7 +37,7 @@ System.register(['angular2/core', './login.component', './private.component', 'a
                         template: "\n            <router-outlet></router-outlet>\n        "
                     }),
                     router_1.RouteConfig([
-                        { path: '/home', name: 'Home', component: private_component_1.PrivateComponent, useAsDefault: true },
+                        { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
                         { path: '/login', name: 'Login', component: login_component_1.LoginComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
