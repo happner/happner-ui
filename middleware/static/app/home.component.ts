@@ -3,14 +3,12 @@ import {AuthenticationService} from './authentication.service'
 import {TopNavComponent} from './topnav.component'
 import {DashBoardComponent} from './dashboard.component'
 import {SideBarComponent} from "./sidebar.component";
-import {ViewEncapsulation} from "angular2/src/core/metadata/view";
 
 @Component({
     selector: 'login-form',
     providers: [AuthenticationService],
     templateUrl:'app/home.component.html',
-    directives:[TopNavComponent,DashBoardComponent,SideBarComponent],
-    encapsulation: ViewEncapsulation.None,
+    directives:[TopNavComponent,DashBoardComponent,SideBarComponent]
 
 })
 

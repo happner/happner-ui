@@ -1,11 +1,8 @@
 import { Component } from 'angular2/core';
-import {ViewEncapsulation} from "angular2/src/core/metadata/view";
 
 @Component({
   selector: 'side-bar',
-  templateUrl: 'app/sidebar.component.html',
-  encapsulation: ViewEncapsulation.None,
-
+  templateUrl: 'app/sidebar.component.html'
   /*styleUrls:['css/sidebar.css']*/
   })
   
