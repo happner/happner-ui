@@ -1,0 +1,89 @@
+
+<div class="side-body padding-top" >
+    <div class="row bump-down">
+        <div class="side-body padding-top">
+            <div class="col-lg-12 col-md-12 col-sm-12 row">
+                <h3>Customers search</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-md-10 col-sm-10" id="editor_holder">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <input type="text" id="customer" class="form-control" placeholder="Search by name" [(ngModel)]=query (keyup)=filter()>
+                        </div>
+                        <div class="card-body">
+                            <span *ngIf="filteredList.length == 0">no data</span>
+                            <table *ngIf="filteredList.length > 0" class="datatable table table-striped table-bordered" cellspacing="0" width="100%" fixed-header>
+                                <thead>
+                                <tr>
+                                    <th >Customer Name</th>
+                                    <th> </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr  *ngFor="#item of filteredList">
+                                    <td>
+                                        <div class="pull-right">
+                                           {{item.name}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="pull-right">
+                                            <a class="btn btn-info" ><span class="fa fa-edit"></span></a>
+                                            <a class="btn btn-danger" ><span class="fa fa-minus"></span></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="sidebar-nav-fixed affix" style="width:220px">
+                        <div class="card card-gray">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="title"><i class="fa fa-edite"></i> actions</div>
+                                </div>
+                                <div class="clear-both"></div>
+                            </div>
+                            <div class="card-body no-padding">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <a href="/#/data/{{currentType}}/search" class="btn btn-primary"><span class="fa fa-search"></span> refresh</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/data/{{currentType}}/edit/new" class="btn btn-success"><span class="fa fa-plus"></span> new</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card card-gray">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <div class="title"><i class="fa fa-alert"></i> recent activity</div>
+                                </div>
+                                <div class="clear-both"></div>
+                            </div>
+                            <div class="card-body no-padding">
+                                <ul class="message-list">
+                                    <li ng-repeat="change in changes">
+                                        <span class="profile-img pull-left" style="font-size:32px"></span>
+                                        <div class="message-block">
+                                            <div class="message"></div>
+                                            <span class="message-datetime" ></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,7 +8,7 @@ import {SideBarComponent} from "./sidebar.component";
     selector: 'login-form',
     providers: [AuthenticationService],
     templateUrl:'app/home.component.html',
-    directives:[TopNavComponent,DashBoardComponent,SideBarComponent]
+    directives:[DashBoardComponent]
 
 })
 

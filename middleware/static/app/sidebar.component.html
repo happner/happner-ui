@@ -2,7 +2,7 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="side-menu-container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/#/dashboard">
+                <a class="navbar-brand" [routerLink]="['Home']">
                     <div class="icon fa fa-tachometer"></div>
                     <div class="title">Happner UI</div>
                 </a>
@@ -19,11 +19,11 @@
                     <div id="ux_customers" class="panel-collapse collapse">
                         <div class="panel-body">
                             <ul class="nav navbar-nav">
-                                <li><a href="/#/data/Customer/edit/new">new</a>
+                                <li><a  [routerLink]="['NewCustomer']">new</a>
                                 </li>
-                                <li><a href="/#/data/Customer/search">search</a>
+                                <li><a [routerLink]="['SearchCustomer']">search</a>
                                 </li>
-                            </ul>s
+                            </ul>
                         </div>
                     </div>
                 </li>
