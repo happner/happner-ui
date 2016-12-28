@@ -2,7 +2,7 @@
 <div class="side-body padding-top" >
     <div class="row bump-down">
         <div>
-            <h3>{{title}}</h3>
+            <json-editor [config]="config" [schema]="schema" [record]="record" (onRecordChange)="doStuffWithNewRecord($event)"></json-editor>
         </div>
     </div>
 </div>

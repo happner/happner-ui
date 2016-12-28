@@ -42,9 +42,12 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     this._router.navigate(['Login']);
                 };
                 AuthenticationService.prototype.login = function (user) {
-                    var authenticatedUser = users.find(function (u) { return u.email === user.email; });
-                    if (authenticatedUser) {
-                        localStorage.setItem("user", authenticatedUser);
+                    // var authenticatedUser = users.find(u => u.email === user.email);
+                    if (true) {
+                        localStorage.setItem("user", {
+                            email: "russel@rfm.org.za",
+                            password: "password85"
+                        });
                         this._router.navigate(['Home']);
                         return true;
                     }
@@ -54,6 +57,9 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                     if (localStorage.getItem("user") === null) {
                         this._router.navigate(['Login']);
                     }
+                };
+                AuthenticationService.prototype.getUser = function () {
+                    return localStorage.getItem("user");
                 };
                 AuthenticationService = __decorate([
                     core_1.Injectable(), 

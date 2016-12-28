@@ -24,9 +24,12 @@ export class AuthenticationService {
   }
 
   login(user){
-    var authenticatedUser = users.find(u => u.email === user.email);
-    if (authenticatedUser){
-      localStorage.setItem("user", authenticatedUser);
+   // var authenticatedUser = users.find(u => u.email === user.email);
+    if (true){
+      localStorage.setItem("user", {
+          email:"russel@rfm.org.za",
+          password:"password85"
+      });
       this._router.navigate(['Home']);      
       return true;
     }
@@ -38,5 +41,9 @@ export class AuthenticationService {
     if (localStorage.getItem("user") === null){
         this._router.navigate(['Login']);
     }
-  } 
+  }
+
+   getUser(){
+     return localStorage.getItem("user");
+   }
 }

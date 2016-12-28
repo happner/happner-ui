@@ -8,12 +8,13 @@ import {DashBoardComponent} from "./dashboard.component";
 import {TopNavComponent} from "./topnav.component";
 import {SearchCustomerComponent} from "./search.customer.component";
 import {CustomerService} from "./customer.service";
+import {SchemaService} from "./schema.service";
 
 
 @Component({
     selector: 'my-app',
     directives: [LoginComponent, ROUTER_DIRECTIVES,NewCustomerComponent,TopNavComponent,DashBoardComponent,SideBarComponent,SearchCustomerComponent],
-    providers: [CustomerService],
+    providers: [CustomerService,SchemaService],
     template: `<div  class="app-container" >
     <div class="row content-container">
     <!--    Top nav-->
@@ -39,7 +40,7 @@ import {CustomerService} from "./customer.service";
 })
 @RouteConfig([
     { path: '/', name: 'Home', component: HomeComponent, useAsDefault:true },
-    { path: 'login', name: 'Login', component: NewCustomerComponent },
+    { path: 'login', name: 'Login', component: LoginComponent },
     { path: '/customer/new', name: 'NewCustomer', component: NewCustomerComponent },
     { path: '/customer/search', name: 'SearchCustomer', component: SearchCustomerComponent },
 ])

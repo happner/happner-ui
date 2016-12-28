@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/src/core/metadata/view"], function(exports_1, context_1) {
+System.register(['angular2/core', "./authentication.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,28 +10,33 @@ System.register(['angular2/core', "angular2/src/core/metadata/view"], function(e
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, view_1;
+    var core_1, authentication_service_1;
     var TopNavComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (view_1_1) {
-                view_1 = view_1_1;
+            function (authentication_service_1_1) {
+                authentication_service_1 = authentication_service_1_1;
             }],
         execute: function() {
             TopNavComponent = (function () {
-                function TopNavComponent() {
+                function TopNavComponent(_service) {
+                    this._service = _service;
                     this.title = 'Top nav works!';
+                    this.user = null;
                 }
+                TopNavComponent.prototype.ngOnInit = function () {
+                    this.user = this._service.getUser();
+                };
                 TopNavComponent = __decorate([
                     core_1.Component({
                         selector: 'top-nav',
                         templateUrl: 'app/topnav.component.html',
-                        encapsulation: view_1.ViewEncapsulation.None
+                        providers: [authentication_service_1.AuthenticationService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [authentication_service_1.AuthenticationService])
                 ], TopNavComponent);
                 return TopNavComponent;
             }());

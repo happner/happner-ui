@@ -11,7 +11,7 @@ import {AuthenticationService, User} from './authentication.service'
 
             <div class="login-box">
     <div>
-        <div class="login-form row" style="background-color:white">
+        <div class="login-form row" style="background-color:white;width: 400px">
             <div class="col-sm-12 text-center login-header">
                 <i class="login-logo"><img src="/img/happner-logo.png" style="width:200px;margin-top:30px"/></i>
             </div>
@@ -20,11 +20,11 @@ import {AuthenticationService, User} from './authentication.service'
                     <form>
                         <div class="control">
                             <label for="username">username</label>
-                            <input [(ngModel)]="user.email" id="email" type="email" class="validate" >
+                            <input [(ngModel)]="user" id="email" type="text" style="width: 288px;height: 10px">
                         </div>
                         <div class="control">
                             <label for="password">password</label>
-                            <input [(ngModel)]="user.password" id="password" type="password" class="form-control validate">
+                            <input [(ngModel)]="user" id="password" type="password" class="form-control " style="width: 288px;height: 10px">
                         </div>
                         <div class="login-button text-center">
                             <input type="submit" class="btn btn-primary" value="Login" (click)="login()" >
@@ -54,6 +54,10 @@ export class LoginComponent {
         if(!this._service.login(this.user)){
             this.errorMsg = 'Failed to login';
         }
+    }
+
+    ngOnInit(): void {
+       this.user = this._service.getUser();
     }
 }
 

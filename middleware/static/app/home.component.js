@@ -27,9 +27,11 @@ System.register(['angular2/core', './authentication.service', './dashboard.compo
             HomeComponent = (function () {
                 function HomeComponent(_service) {
                     this._service = _service;
+                    this.user = new authentication_service_1.User('', '');
                 }
                 HomeComponent.prototype.ngOnInit = function () {
                     this._service.checkCredentials();
+                    this.user = this._service.getUser();
                 };
                 HomeComponent.prototype.logout = function () {
                     this._service.logout();
