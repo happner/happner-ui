@@ -2,6 +2,10 @@
   "name": "happner-angular",
   "version": "0.0.1",
   "scripts": {
+    "start-happner": {
+      "cwd": "middleware/static",
+      "run": "concurrent \"npm run tsc:w\""
+    },
     "test": "mocha test",
     "test-all": "find ./test -name '*.js' | xargs mocha -R spec",
     "coverage": " XUNIT_FILE=\"reports/TESTS-xunit.xml\" istanbul cover --report lcovonly --dir ./reports _mocha ./test/*.js"

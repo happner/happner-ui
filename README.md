@@ -1,5 +1,5 @@
 # happner-ui
-*a happner project*
+*a happner project which serves static resources running on Angular2 framework*
 
 *how to install*
 ```bash
@@ -7,11 +7,14 @@ git clone https://github.com/happner/happner-ui.git
 npm install
 bower install
 gulp build
-node server
+npm start-happner
 ```
 then navigate to http://localhost:60606
 
 
+#angular2
+*ui runs on the angular2 platform which in turn is written in typescript*
+*the npm command also starts up the typescript compiler hence any changes to the ts files are deployed instantly to the server root folder
 
 #understanding schemas
 *system uses JSON schemas to define an object model, there are 2 types of schema:*
