@@ -14,7 +14,8 @@ then navigate to http://localhost:60606
 
 #angular2
 *ui runs on the angular2 platform which in turn is written in typescript*
-*the npm command also starts up the typescript compiler hence any changes to the ts files are deployed instantly to the server root folder
+*the npm command also starts up the typescript compiler hence any changes to the ts files are deployed instantly to the server root folder*
+*angular2 is now included as a bower component*
 
 #understanding schemas
 *system uses JSON schemas to define an object model, there are 2 types of schema:*
