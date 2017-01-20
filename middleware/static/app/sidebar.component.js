@@ -27,7 +27,7 @@ System.register(['angular2/core', "angular2/router", "./authentication.service"]
             SideBarComponent = (function () {
                 function SideBarComponent(_service) {
                     this._service = _service;
-                    this.title = 'Side bar works!';
+                    this.title = '';
                     this.user = null;
                 }
                 SideBarComponent.prototype.ngOnInit = function () {

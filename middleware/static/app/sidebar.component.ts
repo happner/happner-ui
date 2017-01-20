@@ -11,7 +11,7 @@ import {AuthenticationService} from "./authentication.service";
   
 
 export class SideBarComponent {
-  title = 'Side bar works!';
+  title = '';
   public user = null;
 
   constructor(private _service:AuthenticationService){}

@@ -8,9 +8,8 @@ export class User {
 }
 
 var users = [
-  new User('russel','password85'),
-  new User('user1@gmail.com','a23')
-];
+  new User('russel','password85')
+  ];
 
 @Injectable()
 export class AuthenticationService {
